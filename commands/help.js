@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here is the Avaible Commands to use:`)
-            .setDescription('```hi | hello | mute | unmute | addrole | removerole | embed | kick | ban```')
+            .setDescription('```hi | mute | unmute | kick | ban | meme | memberinfo | clear | giveaway```')
             .addFields({ name: 'Prefix', value: '```?```', inline: true})
             .setColor('#00FFF3')
             
