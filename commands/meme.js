@@ -3,7 +3,7 @@ const botconfig = require("../botsettings.json");
     
 
 module.exports.run = async (bot, mesage, args) => {
-        if (message.content === "?meme") {
+       
             const embed = new Discord.MessageEmbed()
             got('https://www.reddit.com/r/memes/random/.json').then(response => {
                 let content = JSON.parse(response.body);
@@ -21,7 +21,6 @@ module.exports.run = async (bot, mesage, args) => {
                 message.channel.send(embed);
             })
         }
-    }
 
 
 
