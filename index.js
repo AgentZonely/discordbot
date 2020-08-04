@@ -4,6 +4,16 @@ const botsettings = require('./botsettings.json');
 
 const bot = new Discord.Client({disableEveryone: true});
 
+bot.on("guildMemberAdd", member => {
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
+    welcomeChannel.send (`Welcome! ${member}, hope you enjoy your stay at **Team Agent!** `)
+})
+
+bot.on("guildMemberRemove", member => {
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'goodbye')
+    welcomeChannel.send (`${member} was so lonely that they had to leave and become a hermit in the woods :pepe:`)
+})
+
 
 
 require("./util/eventHandler")(bot)
