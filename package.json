@@ -9,9 +9,11 @@
   "author": "Agent Zonely",
   "license": "ISC",
   "dependencies": {
+    "discord-giveaways": "^4.2.1",
     "discord.js": "^12.2.0",
     "fs": "0.0.1-security",
     "moment": "^2.27.0",
+    "ms": "^2.1.2",
     "random-puppy": "^1.1.0"
   }
 }
