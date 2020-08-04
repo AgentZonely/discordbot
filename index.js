@@ -1,8 +1,12 @@
   
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
+const got = require('got')
 
 const bot = new Discord.Client({disableEveryone: true});
+
+
+    
 
 bot.on("guildMemberAdd", member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
@@ -53,5 +57,6 @@ bot.on("message", async message => {
     if(commandfile) commandfile.run(bot,message,args)
 
 })
+
 
 bot.login(process.env.token);
