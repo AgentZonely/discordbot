@@ -8,7 +8,7 @@ module.exports={
     run: async(bot,message,args)=>{
         if(args[0]) return message.channel.send(`Usage: <time> <channel> <prize>`)
         if(args[0].endsWith("d")&&!args[0].endsWith("h")&&!args[0].endsWith("m")) return message.channel.send(`Please specify your time in d (days), h (hours) or m (minutes)`)
-        if(isNaN(args[0][0])) return message.channel.send(`That is not a number!`)
+        if(isNaN(args[0])) return message.channel.send(`That is not a number!`)
         let channel = message.mentions.channels.first()
         if(!channel) return message.channel.send(`I could not find that channel in the server!`)
         let prize = args.slice(2).join(" ")
@@ -29,6 +29,14 @@ module.exports={
         }, ms(args[0]))
 
     }
+}
+
+module.exports.config = {
+    name: "giveaway",
+    description: "Creates a giveaway",
+    usage: "?giveaway",
+    accessableby: "Admins",
+    aliases: ['g']
 }
 
 ////?giveaway #h/d/m #giveaways code
