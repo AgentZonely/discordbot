@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, mesage, args) => {
-    return mesage.channel.send("Hello")
+    return mesage.channel.send("Hello :pepeyay:")
 }
 
 module.exports.config = {
