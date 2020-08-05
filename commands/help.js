@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     //Normal usage of (prefix)help without any args. (Shows all of the commands and you should set the commands yourself)
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
-            .setAuthor(`Here are all the avaible Commands:`)
+            .setAuthor(`Here are all the available commands:`)
             .setDescription('```hi | mute | unmute | kick | ban | meme | memberinfo | clear | giveaway```')
             .addFields({ name: 'Prefix', value: '```?```', inline: true})
             .setColor('#00FFF3')
