@@ -36,7 +36,7 @@ module.exports.config = {
     description: "Creates a giveaway",
     usage: "?giveaway",
     accessableby: "Members",
-    aliases: ['g']
+    aliases: ['']
 }
 
 ////?giveaway #h/d/m #giveaways code
