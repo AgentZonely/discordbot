@@ -1,53 +1,36 @@
-const Discord = require('discord.js');
-const botsettings = require('./botsettings.json');
+const fs = require("fs")
+const discord = require("discord.js")
+const prefix = "?"
+const client = new discord.Client()
+client.commands = new discord.Collection()
 
-const bot = new Discord.Client({disableEveryone: true});
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('js'))
 
+client.aliases = new discord.Collection()
+for (const file of commandFiles) {
+  const command = require(`./commands/${file}`)
+  command.aliases.forEach(alias => client.aliases.set(alias, command.name))
+  client.commands.set(command.name, command)
+}
 
-
-bot.on("guildMemberAdd", member => {
-    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
-    welcomeChannel.send (`Welcome to **Team Agent!** ${member} hope you enjoy your stay!`)
+client.on("ready", () => {
+  console.log("Im online")
 })
 
-require("./util/eventHandler")(bot)
-
-const fs = require("fs");
-bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
-
-fs.readdir("./commands/", (err, files) => {
-
-    if(err) console.log(err)
-
-    let jsfile = files.filter(f => f.split(".").pop() === "js") 
-    if(jsfile.length <= 0) {
-         return console.log("[LOGS] Couldn't Find Commands!");
-    }
-
-    jsfile.forEach((f, i) => {
-        let pull = require(`./commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
-        pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
-        });
-    });
-});
-
-bot.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
-
-    let prefix = botsettings.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-
-    if(!message.content.startsWith(prefix)) return;
-    let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
-    if(commandfile) commandfile.run(bot,message,args)
-
- 
-
+client.on("message" , async message => {
+  if(message.author.bot) return
+  
+  if(!message.content.startsWith(prefix)) return
+  
+  if(!message.member) message.member = await message.guild.fetchMember(message);
+  const args = message.content.slice(prefix.length).split(/ +/)
+  const command = args.shift().toLowerCase()
+  const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
+  
+  if(cmd === null ) return
+  
+  if(cmd) cmd.run(client, message, args)
+  if(!cmd) return
 })
 
-bot.login(botsettings.token);
+client.login("NzM5NTc3Mjc5OTU2NTE2OTk1.XycfBA.x17A54zD6daNrIZo_fyIZj2IPAU")

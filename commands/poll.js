@@ -20,5 +20,5 @@ module.exports.config = {
     description: "Creates a poll for members to vote",
     usage: "?poll",
     accessableby: "Agents",
-    aliases: ['']
+    aliases: [""]
 }
