@@ -3,7 +3,7 @@ const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, mesage, args) => {
     if(!args[0]) return message.channel.send(`You did not specifiy your time!`);
-    if(!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m"))
+    if(!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m"));
       return message.channel.send(`The time needs to be specified in **days (d), hours (h), or minutes (m)**`);
       if (isNaN(args[0][0])) return Message.channel.send(`It must be a **number** you know that?`);
       
