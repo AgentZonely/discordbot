@@ -37,10 +37,6 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
-    const messageArray = message.content.split(' ');
-	const cmd = messageArray[0];
-	const args = messageArray.slice(1);
-
     let prefix = botsettings.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
