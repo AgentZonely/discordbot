@@ -1,7 +1,7 @@
 const fs = require("fs")
 const discord = require("discord.js")
 const prefix = "?"
-const client = new discord.Client()
+const bot = new discord.Client()
 bot.commands = new discord.Collection()
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
