@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const botconfig = require("../botsettings.json");
 
-module.exports.run = async (bot, mesage, args) => {
+module.exports.run = async (bot, message, args) => {
     let pollChannel = message.mentions.channels.first();
     let pollDescription = args.slice(1).join(' ');
 
@@ -10,8 +10,8 @@ module.exports.run = async (bot, mesage, args) => {
     .setDescription(pollDescription)
     .setColor('YELLOW')
     let msgEmbed = await pollChannel.send(embedPoll);
-    await msgEmbed.react('👍')
-    await msgEmbed.react('👎')
+    await MessageEmbed.react('👍')
+    await MessageEmbed.react('👎')
 }
 
 
