@@ -3,6 +3,10 @@ const botsettings = require('./botsettings.json');
 
 const bot = new Discord.Client({disableEveryone: true});
 
+const messageArray = message.content.split(' ');
+	const cmd = messageArray[0];
+	const args = messageArray.slice(1);
+
 bot.on("guildMemberAdd", member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
     welcomeChannel.send (`Welcome to **Team Agent!** ${member} hope you enjoy your stay!`)
