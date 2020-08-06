@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const moment = require('moment');
+const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
     let userArray = message.content.split(" ");
