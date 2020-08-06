@@ -6,7 +6,6 @@ bot.commands = new discord.Collection()
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 const config = require('./botsettings.json')
-const prefix = config.prefix;
 const token = config.token;
 
 
