@@ -43,5 +43,5 @@ module.exports.config = {
     description: "Creates a giveaway",
     usage: "?giveaway",
     accessableby: "Agents",
-    aliases: ['g']
+    aliases: []
 }
