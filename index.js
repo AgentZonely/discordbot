@@ -4,7 +4,11 @@ const prefix = "?"
 const client = new discord.Client()
 bot.commands = new discord.Collection()
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('js'))
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
+const config = require('./botsettings.json')
+const prefix = config.prefix;
+const token = config.token;
+
 
 bot.aliases = new discord.Collection()
 for (const file of commandFiles) {
@@ -13,11 +17,16 @@ for (const file of commandFiles) {
   bot.commands.set(command.name, command)
 }
 
+bot.categories = fs.readdirSync("./commandHandler");
+["commands"].forEach(handler => {
+    require(`./util/${handler}`)(bot);
+});
+
 bot.on("ready", () => {
   console.log("Im online")
 })
 
-bot.on("message" , async message => {
+bot.on('message' , async message => {
   if(message.author.bot) return
   
   if(!message.content.startsWith(prefix)) return
