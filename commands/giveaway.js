@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
         .setDescription(`Winner: ${winner}`)
         m.edit(embed)
 
-        Message.channel.send(`Congrats ${winner}! you have won the giveaway!`);
+        message.channel.send(`Congrats ${winner}! you have won the giveaway!`);
     }), ms(args[0]);
       
 }
