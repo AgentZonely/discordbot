@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
     let pollChannel = message.mentions.channels.first();
@@ -20,5 +19,5 @@ module.exports.config = {
     description: "Creates a poll for members to vote",
     usage: "?poll",
     accessableby: "Agents",
-    aliases: []
+    aliases: ['']
 }
