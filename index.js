@@ -41,4 +41,4 @@ bot.on('message' , async message => {
   if(!cmd) return
 })
 
-bot.login("NzM5NTc3Mjc5OTU2NTE2OTk1.XycfBA.x17A54zD6daNrIZo_fyIZj2IPAU")
+bot.login("token")
