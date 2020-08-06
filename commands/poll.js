@@ -10,8 +10,8 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(pollDescription)
     .setColor('YELLOW')
     let msgEmbed = await pollChannel.send(embedPoll);
-    await MessageEmbed.react('👍')
-    await MessageEmbed.react('👎')
+    await msgEmbed.react('👍')
+    await msgEmbed.react('👎')
 }
 
 
