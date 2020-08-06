@@ -5,11 +5,11 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
     if (!args[0]) return message.channel.send(`You did not specify your time!`);
     if (!args[0].endsWith("d") && !args[0].endsWith("h") && !args[0].endsWith("m"))
-      return message.channel.send(`The time needs to have days (d) or hours (h) or minutes (m)`);
+      return message.channel.send(`**The time needs to have days (d) or hours (h) or minutes (m)**`);
     if (isNaN(args[0][0])) return message.channel.send(`It must be a number you know that?`);
 
     let prize = args.slice(1).join(" ");
-    if (!prize) return message.channel.send(`No prize specified!`);
+    if (!prize) return message.channel.send(`Are you srsly gonna create a giveaway with no **PRIZE?!** smh.`);
   
     let Embed = new discord.MessageEmbed()
       .setTitle(`New giveaway!`)
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("RED")
         .setDescription("No winners")
         m.edit(embed)
-        return message.channel.send(`Couldnt generate a winner as there is no one in that giveaway!`);
+        return message.channel.send(`This server is so lonely that nobody entered and I could'nt pick a winner LOL`);
       }
 
       let winner = m.reactions.cache.get("🎉").users.cache.filter((b) => !b.bot).random();
@@ -43,5 +43,5 @@ module.exports.config = {
     description: "Creates a giveaway",
     usage: "?giveaway",
     accessableby: "Agents",
-    aliases: []
+    aliases: [""]
 }
