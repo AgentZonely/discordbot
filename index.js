@@ -44,6 +44,19 @@ bot.on("message", async message => {
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
     if(commandfile) commandfile.run(bot,message,args)
 
+    if (cmd === '?poll'){
+        let pollChannel = message.mentions.channels.first();
+        let pollDescription = args.slice(1).join(' ');
+
+        let embedPoll = new Discord.MessageEmbed()
+        .setTitle('😲 New Poll! 😲')
+        .setDescription(pollDescription)
+        .setColor('YELLOW')
+        let msgEmbed = await pollChannel.send(embedPoll);
+        await msgEmbed.react('👍')
+        await msgEmbed.react('👎')
+    }
+
 })
 
 bot.login(botsettings.token);
