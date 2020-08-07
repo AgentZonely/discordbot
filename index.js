@@ -3,7 +3,7 @@ const botsettings = require('./botsettings.json');
 
 const bot = new Discord.Client({disableEveryone: true});
 
-client.config = {
+bot.config = {
     token: process.botsettings.token,
     prefix: process.botsettings.prefix,
     api: process.botsettings.GOOGLE_API,
