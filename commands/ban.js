@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
        return message.channel.send(`**${message.author.username}**, Atleast give a **reason** to why you are banning ${target}`)
      }
       
-      let embed = new discord.MessageEmbed()
+      let embed = new Discord.MessageEmbed()
       .setTitle("The bann hammer has spoken!")
       .setDescription(`Banned ${target} (${target.id})`)
       .setColor("#ff2050")
