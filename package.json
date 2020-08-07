@@ -14,6 +14,8 @@
     "fs": "0.0.1-security",
     "moment": "^2.27.0",
     "ms": "^2.1.2",
-    "random-puppy": "^1.1.0"
+    "random-puppy": "^1.1.0",
+    "discord-youtube-api": "^1.1.0"
+    
   }
 }
