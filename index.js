@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
-const YouTube = require("YouTube");
+const YouTube = require("discord-youtube-api");
+const yts = require( 'yt-search' );
 
 const bot = new Discord.Client({disableEveryone: true});
 
