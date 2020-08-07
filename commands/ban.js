@@ -3,7 +3,7 @@ const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
     if(!message.member.hasPermission("BAN_MEMBERS")) {
-        return message.channel.send(`**${message.author.username}**, **Its just a waste of time trying to ban someone without perms`)
+        return message.channel.send(`**${message.author.username}**, Its just a waste of time trying to ban someone without perms`)
       }
       
       if(!message.guild.me.hasPermission("BAN_MEMBERS")) {
@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
       const target = message.mentions.members.first();
       
       if(!target) {
-        return message.channel.send(`**${message.author.username}**, How are you gonna ban _**NO ONE**_`)
+        return message.channel.send(`**${message.author.username}**, How are you gonna ban _**NO ONE?!**_`)
       }
       
       if(target.id === message.author.id) {
@@ -23,11 +23,11 @@ module.exports.run = async (bot, message, args) => {
      
       
      if(!args[1]) {
-       return message.channel.send(`**${message.author.username}**, Atleast give a **reason** to why you are banning ${target}`)
+       return message.channel.send(`**${message.author.username}**, Atleast give a **reason** to why you are banning ${target} from the server`)
      }
       
       let embed = new Discord.MessageEmbed()
-      .setTitle("The bann hammer has spoken!")
+      .setTitle("The ban hammer has spoken!")
       .setDescription(`Banned ${target} (${target.id})`)
       .setColor("#ff2050")
       .setThumbnail(target.avatarURL)
