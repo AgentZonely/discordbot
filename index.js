@@ -3,10 +3,6 @@ const botsettings = require('./botsettings.json');
 
 const bot = new Discord.Client({disableEveryone: true});
 
-bot.config = {
-    api: process.botsettings.GOOGLE_API,
-  };
-
 bot.on("guildMemberAdd", member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
     welcomeChannel.send (`Welcome! ${member}`)
