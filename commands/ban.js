@@ -2,22 +2,44 @@ const Discord = require("discord.js")
 const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
-    if(!message.member.hasPermission('BAN_MEMBERS')) 
-        message.channel.send("You don't have permission to use that command.");
-    else {
-        let bannedMember = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username === args.slice(0).join(" ") || x.user.username === args[0])
-        if(bannedMember){
-
-        try {
-            console.log(bannedMember.tag + " was banned.");
-            message.channel.send (`${bannedMember}has been banned from the server!`)
-        }
-            catch(err) {
-            console.log(err);
-        }
+    if(!message.member.hasPermission("BAN_MEMBERS")) {
+        return message.channel.send(`**${message.author.username}**, **Its just a waste of time trying to ban someone without perms`)
+      }
+      
+      if(!message.guild.me.hasPermission("BAN_MEMBERS")) {
+        return message.channel.send(`**${message.author.username}**, Atleast give me perms before you ban someone smh.`)
+      }
+      
+      const target = message.mentions.members.first();
+      
+      if(!target) {
+        return message.channel.send(`**${message.author.username}**, How are you gonna ban _**NO ONE**_`)
+      }
+      
+      if(target.id === message.author.id) {
+        return message.channel.send(`**${message.author.username}**, Why are you trying to ban yourself lol`)
+      }
+      
+     
+      
+     if(!args[1]) {
+       return message.channel.send(`**${message.author.username}**, Atleast give a **reason** to why you are banning ${target}`)
+     }
+      
+      let embed = new discord.MessageEmbed()
+      .setTitle("The bann hammer has spoken!")
+      .setDescription(`Banned ${target} (${target.id})`)
+      .setColor("#ff2050")
+      .setThumbnail(target.avatarURL)
+      .setFooter(`Banned by ${message.author.tag}`);
+      
+      message.channel.send(embed)
+      target.ban(args[1])
+      
+      
+      
     }
-}
-}
+  
 
 module.exports.config = {
     name: "ban",
