@@ -3,11 +3,11 @@ const botconfig = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
     if(!message.member.hasPermission("KICK_MEMBERS")) {
-        return message.channel.send(`**${message.author.username}**, Its just a waste of time trying to ban someone without perms`)
+        return message.channel.send(`**${message.author.username}**, Its just a waste of time trying to kick someone without perms`)
       }
       
       if(!message.guild.me.hasPermission("KICK_MEMBERS")) {
-        return message.channel.send(`**${message.author.username}**, Atleast give me perms before you ban someone smh.`)
+        return message.channel.send(`**${message.author.username}**, Atleast give me perms before you kick someone smh.`)
       }
       
       let target = message.mentions.members.first();

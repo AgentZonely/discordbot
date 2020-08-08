@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const botconfig = require("../botsettings.json");
 
-module.exports.run = async (bot,message,args) => {
+module.exports.run = async (bot, message, args) => {
     let pollChannel = message.mentions.channels.first();
     let pollDescription = args.slice(1).join(' ');
 
