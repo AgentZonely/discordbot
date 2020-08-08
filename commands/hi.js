@@ -5,7 +5,7 @@ const cdseconds = 5;
 
 
 module.exports.run = async (bot, message, args) => {
-    message.channel.send("Hello peeps :D")
+    
 
     if(!message.content.startsWith(botsettings.prefix)) return;
     if(usedCommand.has(message.author.id)){
@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("C'mon slow it down")
         .setDescription("You can use another command in 3 more seconds")
         message.channel.send(embed);
+        message.channel.send("Hello peeps :D")
     } else {
         const embed = new Discord.MessageEmbed()
         .setColor("GREEN")
