@@ -55,5 +55,5 @@ const { guild } = message
     description: "",
     usage: "?serverinfo",
     accessableby: "Agents",
-    aliases: ['']
+    aliases: []
 }
