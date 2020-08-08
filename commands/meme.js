@@ -14,6 +14,7 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(embed);
 
+    if(!message.content.startsWith(prefix)) return;
     if(usedCommand.has(message.author.id)){
         const embed = new Discord.MessageEmbed()
         .setColor("RED")
