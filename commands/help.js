@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const botconfig = require("../botsettings.json");
+const usedCommand = new Set();
 
 module.exports.run = async (bot,message,args) => {
     //We have to set a argument for the help command beacuse its going to have a seperate argument.
