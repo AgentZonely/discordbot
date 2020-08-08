@@ -14,7 +14,6 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("C'mon slow it down")
         .setDescription("You can use another command in 3 more seconds")
         message.channel.send(embed);
-        message.channel.send("Hello peeps :D")
     } else {
         const embed = new Discord.MessageEmbed()
         .setColor("GREEN")
@@ -23,6 +22,7 @@ module.exports.run = async (bot, message, args) => {
         usedCommand.add(message.author.id);
         setTimeout(() => {
             usedCommand.delete(message.author.id);
+            message.channel.send("Hello peeps :D")
         }, 3000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.
     }
 }
