@@ -22,9 +22,9 @@ module.exports.run = async (bot, message, args) => {
         usedCommand.add(message.author.id);
         setTimeout(() => {
             usedCommand.delete(message.author.id);
-            message.channel.send("Hello peeps :D")
+            
         }, 3000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.
-    }
+    } message.channel.send("Hello peeps :D")
 }
 
 module.exports.config = {
