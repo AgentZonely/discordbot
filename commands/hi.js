@@ -1,31 +1,26 @@
 const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
-const usedCommand = new Set();
-const cdseconds = 5;
+const used = new Map();
+const Duration = new require('humanize-duration');
 
 
 module.exports.run = async (bot, message, args) => {
     
 
-    if(!message.content.startsWith(botsettings.prefix)) return;
-    if(usedCommand.has(message.author.id)){
-        const embed = new Discord.MessageEmbed()
-        .setColor("RED")
-        .setTitle("C'mon slow it down")
-        .setDescription("You can use another command in 3 more seconds")
-        message.channel.send(embed);
-    } else {
-        const embed = new Discord.MessageEmbed()
-        .setColor("GREEN")
-        .setTitle("The cooldown is over!")
-        message.channel.send(embed);
-        usedCommand.add(message.author.id);
-        setTimeout(() => {
-            usedCommand.delete(message.author.id);
-            
-        }, 3000); //You can set the ammount of the cooldown here! Its Formated to Miliseconds.
-    } message.channel.send("Hello peeps :D")
+
+const cooldown = used.get(message.author.id);
+if(cooldown) {
+    const remaining = Duration(cooldown - Date.now(), { units: ['h', 'm'], round: true });
+    return messgae.reply(`C'mon slow it down, you can use another command in ${remaining}`).catch((err) => message.reply(`${err}`)); 
 }
+else {
+    message.channel.send("Hello peeps :D")
+
+    used.set(message.author.id, Date.now() + 1000 * 60 * 60 * 24);
+    setTimeout(() => { used.delete(message.author.id), 1000 * 60 * 60 * 24});
+}
+};
+
 
 module.exports.config = {
     name: "hi",
