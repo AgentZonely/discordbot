@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
-const YouTube = require("discord-youtube-api");
+const db = require('quick.db');
 
 const bot = new Discord.Client({disableEveryone: true});
 
@@ -36,7 +36,7 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
-    let prefix = botsettings.prefix;
+    let prefix = botsettings.default_prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = message.content.substring(message.content.indexOf(' ')+1);
