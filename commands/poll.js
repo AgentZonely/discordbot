@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const botconfig = require("../botsettings.json");
+const botsettings = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])

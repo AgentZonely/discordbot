@@ -1,6 +1,6 @@
 const { DiscordAPIError } = require("discord.js");
 const Discord = require("discord.js");
-const botconfig = require("../botsettings.json");
+const botsettings = require("../botsettings.json");
 
 const usedCommand = new Set();
 
