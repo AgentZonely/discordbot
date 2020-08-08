@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
  const botconfig = require("../botsettings.json");
- const YouTube;
 
 
     module.exports.run = async (bot, message, args) => {
