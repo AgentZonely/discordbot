@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
 const usedCommand = new Set();
+const cdseconds = 5;
 
 
 module.exports.run = async (bot, message, args) => {
