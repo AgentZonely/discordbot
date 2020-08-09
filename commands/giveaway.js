@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, arg) => {
     if(!arg[0]) return message.channel.send("Hey nerd! specify a time!")
 
     if(!arg[0].endsWith("d") &&!arg[0].endsWith("h") &&!arg[0].endsWith("m")) 
-    if(arg[0][0])) return message.channel.send("Whatever you just typed as the duration is NOT a number!")
+    if(arg[0][0]) return message.channel.send("Whatever you just typed as the duration is NOT a number!")
     let channel = message.mentions.channels.first()
     if(!channel) return message.channel.send("You can't create a giveaway without **mentioning** a **channel** lol")
     let prize = arg.slice(2).join(" ")
