@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "Poll",
-    description: "Creates a poll",
+    description: "Creates a simple poll",
     usage: "?poll <channel id> <question>",
     alisases: []
 }
