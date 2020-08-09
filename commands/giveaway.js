@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
-const ms = require('ms');
+const ms = require("ms");
 
 module.exports.run = async (bot, message, arg) => {
     if(!arg[0]) return message.channel.send("Hey nerd! specify a time!")
