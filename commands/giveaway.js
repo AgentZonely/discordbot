@@ -20,11 +20,15 @@ module.exports.run = async (bot, message, arg) => {
 
     let embed = new Discord.MessageEmbed()
     .setTitle("Giveaway Time!")
-    .setDescription(`Prize: ${prize}`)
-    .setDescription(`Hosted by **${message.author.mention}**`)
-    .setDescription("React to this message with '🎉' to enter")
+    .addField(
+        { value: `Prize: ${prize}` }
+    )
+    .addField(
+        { value: `Hosted by: **${message.author.mention}**` }
+    )
+    .setDescription("React to this message with 🎉 to enter")
     .setColor("YELLOW")
-    .setFooter("Made by Agent Cheese")
+    .setFooter("Ends at")
     .setTimestamp(Date.now() + ms(arg[1]))
    let m = await channel.send(embed);
    m.react("🎉")
