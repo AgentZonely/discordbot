@@ -20,12 +20,9 @@ module.exports.run = async (bot, message, arg) => {
 
     let embed = new Discord.MessageEmbed()
     .setTitle("Giveaway Time!")
-    .addFields(
-        { value: `Prize: ${prize}` },
-        { value: `**Hosted by: **${message.author.mention}**` }
-    )
-    .addField(`Prize: ${prize}`, `**Hosted by: **${message.author.mention}**`, true)
-    .setDescription("React to this message with 🎉 to enter")
+    .setDescription(`Prize: ${prize}
+    Hosted by **${message.author.username}**
+    React to this message with 🎉 to enter!`)
     .setColor("RANDOM")
     .setFooter("Ends at")
     .setTimestamp(Date.now() + ms(arg[1]))
