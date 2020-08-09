@@ -2,16 +2,26 @@ const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
-    let pollChannel = message.channel.mentions.channels.first();
-    let pollDescription = args.slice(1).join('');
+    if(!message.member.permissions.has("ADMINISTRATOR")) return new Discord.MessageEmbed()
+    .setTitle("ERROR!")
+    .setDescription("You don't have permissions lol")
+    message.channel.send(embed);
 
-    let embedPoll = new Discord.MessageEmbed()
-    .setTitle("New Poll!")
-    .setDescription(pollDescription)
-    .setColor('YELLOW')
-    let msgEmbed = await pollChannel.send(embedPoll);
-    await msgEmbed.react('👍')
-    await msgEmbed.react('👎')
+    //?poll <channel mention> <question>
+    const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+    if(!channel){
+       return message.channel.send("Bruh, Mention a channel to create the poll in")
+    }
+    let question = message.content.slice(bot.prefix.length+5+channel.id.length+3)
+    if(!question){
+        return message.channel.send('Why do u wanna create a poll without asking a question lol')
+    } const embed = new Discord.MessageEmbed()
+    .setTitle(`Sup nerds! ${message.author.id} wants to ask u a question!`)
+    .setDescription(question)
+    .setColor("YELLOW")
+    let message = await bot.channels.cache.get(channel.id).send(embed)
+     await msg.react('👍')
+     await msg.react('👎')
 }
 
 
