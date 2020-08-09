@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, arg) => {
     if(!question){
         return message.channel.send('Why do u wanna create a poll without asking a question lol')
     } const embed = new Discord.MessageEmbed()
-    .setTitle(`Sup nerds! ${message.author.tag} wants to ask u a question!`)
+    .setTitle(`Sup nerds! **${message.author.username}** wants to ask u a question!`)
     .setDescription(question)
     .setColor("YELLOW")
     let msg = await bot.channels.cache.get(channel.id).send(embed)
