@@ -19,11 +19,13 @@ module.exports.run = async (bot, message, arg) => {
     message.channel.send(`Giveaway created in **${channel}!**`)
 
     let embed = new Discord.MessageEmbed()
-    .setTitle("Sup Nerds (jk)")
-    .setDescription(`**${message.author.username}** is giving away **${prize}**`)
+    .setTitle("Giveaway Time!")
+    .setDescription(`Prize: ${prize}`)
+    .setDescription(`Hosted by **${message.author.mention}**`)
+    .setDescription("React to this message with '🎉' to enter")
     .setColor("YELLOW")
     .setFooter("Made by Agent Cheese")
-    .setTimestamp(Date.now() + ms(args[1]))
+    .setTimestamp(Date.now() + ms(arg[1]))
    let m = await channel.send(embed);
    m.react("🎉")
     setTimeout(() => {
