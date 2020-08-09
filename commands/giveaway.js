@@ -5,7 +5,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, arg) => {
     if(!arg[0]) return message.channel.send("Hey nerd! specify a time!")
 
-    if(!arg[0].endsWith("d") &&!arg[0].endsWith("h") &&!arg[0].endsWith("m")) return message.channel.send("Hey there nerd! the correct time format is **days (d), hours (h), or minutes (m)!**")
+    if(!arg[0].endsWith("d") &&!arg[0].endsWith("h") &&!arg[0].endsWith("m")) 
     if(isNaN(arg[0][0])) return message.channel.send("Whatever you just typed as the duration is NOT a number!")
     let channel = message.mentions.channels.first()
     if(!channel) return message.channel.send("You can't create a giveaway without **mentioning** a **channel** lol")
