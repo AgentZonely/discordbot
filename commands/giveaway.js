@@ -5,7 +5,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, arg) => {
     let embed2 = new Discord.MessageEmbed()
     .setTitle("ERROR!")
-    .setTitle("U dont have permissions lol")
+    .setDescription("U dont have permissions lol")
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(embed2)
 
     if(!arg[1]) return message.channel.send("Hey nerd! specify a time!")
@@ -20,8 +20,8 @@ module.exports.run = async (bot, message, arg) => {
 
     let embed = new Discord.MessageEmbed()
     .setTitle("Giveaway Time!")
-    .setDescription(`Prize: ${prize}
-    Hosted by **${message.author.username}**
+    .setDescription(`Prize: **${prize}**
+    Hosted by: **${"@" + memberTag}**
     React to this message with 🎉 to enter!`)
     .setColor("RANDOM")
     .setFooter("Ends at")
