@@ -2,10 +2,7 @@ const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
 
 module.exports.run = async (bot, message, args) => {
-    if(!message.member.permissions.has("ADMINISTRATOR")) return new Discord.MessageEmbed()
-    .setTitle("ERROR!")
-    .setDescription("You don't have permissions lol")
-    message.channel.send(embed);
+    if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send("You dont have permissions lol")
 
     //?poll <channel mention> <question>
     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
