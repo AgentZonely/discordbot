@@ -11,7 +11,6 @@ module.exports.run = async (bot, message, arg) => {
     if(!channel) return message.channel.send("You can't create a giveaway without **mentioning** a **channel** lol")
     let prize = arg.slice(3).join(" ")
     if(!prize) return message.channel.send("Don't you wanna give out something _**NERD**_ (jk lol)")
-    message.channel.send(`Giveaway created in **${channel}!**`)
 
     let embed = new Discord.MessageEmbed()
     .setTitle("Sup Nerds (jk)")
