@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, arg) => {
         if(m.reactions.cache.size <= 1) return channel.send("**haha**, this server is so lonely that **no one** entered and I could not start the giveaway")
         if(m.reactions.cache.size <= 0) return channel.send("**haha**, this server is so lonely that **no one** entered and I could not pick a winner")
         let winner = m.reactions.cache.get("🎉").users.cache.filter(u=> !u.bot).random()
-        channel.send(`Congratz **${winner}** you have won **${prize}!!!**`)
+        channel.send(`Congratz **${winner}** you have won **${prize}!!**`)
     }, ms(arg[1]));
 
 
