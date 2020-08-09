@@ -6,13 +6,13 @@ const ms = require('ms');
 module.exports.run = async (bot, message, arg) => {
 if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You do not have permission to reroll giveaways');
 
-        if(!args[0]) return message.channel.send('No giveaway ID provided');
+        if(!arg[0]) return message.channel.send('No giveaway ID provided');
 
-        let giveaway = bot.giveawaysManager.giveaways.find((g) => g.prize === args.join(" ")) || bot.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
+        let giveaway = bot.giveawaysManager.giveaways.find((g) => g.prize === arg.join(" ")) || bot.giveawaysManager.giveaways.find((g) => g.messageID === args[0]);
 
         if(!giveaway) return message.channel.send('Couldn\'t find a giveaway with that ID/name');
 
-        client.giveawaysManager.reroll(giveaway.messageID)
+        bot.giveawaysManager.reroll(giveaway.messageID)
         .then(() => {
             message.channel.send('Giveaway rerolled')
         })
