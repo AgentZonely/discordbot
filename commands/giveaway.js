@@ -3,6 +3,11 @@ const botsettings = require("../botsettings.json");
 const ms = require("ms");
 
 module.exports.run = async (bot, message, arg) => {
+    let embed = new Discord.MessageEmbed()
+    .setTitle("ERROR!")
+    .setTitle("U dont have permissions lol")
+    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(embed)
+
     if(!arg[1]) return message.channel.send("Hey nerd! specify a time!")
 
     if(!arg[1].endsWith("d") &&!arg[1].endsWith("h") &&!arg[1].endsWith("m")) 
