@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, arg) => {
     if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send("You dont have permissions lol")
 
     //?poll <channel mention> <question>
-    const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+    const channel = message.mentions.channels.first() || message.guild.channels.cache.get(arg[0])
     if(!channel){
        return message.channel.send("Bruh, Mention a channel to create the poll in")
     }

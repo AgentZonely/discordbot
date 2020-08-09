@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, arg) => {
       
      
       
-     if(!args[1]) {
+     if(!arg[1]) {
        return message.channel.send(`**${message.author.username}**, Atleast give a **reason** to why you are banning ${target} from the server`)
      }
       
@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, arg) => {
       .setFooter(`Banned by ${message.author.tag}`);
       
       message.channel.send(embed)
-      target.ban(args[1])
+      target.ban(arg[1])
       
       
       

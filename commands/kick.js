@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, arg) => {
        return message.channel.send(`**${message.author.username}**, Why are you trying to kick yourself lol`)
       }
       
-    if(!args[1]) {
+    if(!arg[1]) {
       return message.channel.send(`**${message.author.username}**, Atleast give a **reason** to why you are kicking ${target} from the server`)
     }
       
@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, arg) => {
       
       message.channel.send(embed)
       
-      target.kick(args[1]);
+      target.kick(arg[1]);
       
       
       

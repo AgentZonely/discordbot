@@ -8,16 +8,16 @@ module.exports.run = async (bot, message, arg) => {
             return message.channel.send(
                 `${message.author.username}, How are you gonna delete messages without perms, duh. ` // returns this message to user with no perms
             );
-        if (!args[0]) {
+        if (!arg[0]) {
             return message.channel.send(`Please enter an amount from 1 to 100`)
         }
 
         let deleteAmount;
 
-        if (parseInt(args[0]) > 100 ) {
+        if (parseInt(arg[0]) > 100 ) {
             deleteAmount = 100;
         } else {
-            deleteAmount = parseInt(args[0]);
+            deleteAmount = parseInt(arg[0]);
         }
 
         await message.channel.bulkDelete(deleteAmount, true);
