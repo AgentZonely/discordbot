@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, arg) => {
     .setDescription(`**${message.author.username}** is giving away **${prize}**`)
     .setTimestamp(Date.now()+ms(arg[1]))
     .setColor("YELLOW")
-   let m = await message.channel.send(embed);
+   let m = await channel.send(embed);
    m.react("🎉")
     .setTimeout(() => {
         let winner = m.reactions.cache.get("🎉").users.cache.filter(u=> !u.bot).random()
