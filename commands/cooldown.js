@@ -4,7 +4,7 @@ const botsettings = require("../botsettings.json");
 
 const usedCommand = new Set();
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, arg) => {
     if(usedCommand.has(message.author.id)){
         const embed = new Discord.MessageEmbed()
         .setColor("RED")

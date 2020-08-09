@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const botsettings = require("../botsettings.json");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, arg) => {
     if(!message.member.hasPermission("BAN_MEMBERS")) {
         return message.channel.send(`**${message.author.username}**, Its just a waste of time trying to ban someone without perms`)
       }

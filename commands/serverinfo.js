@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
 const usedCommand = new Set();
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, arg) => {
 const { guild } = message
 
     const { name, region, memberCount, owner, afkTimeout } = guild

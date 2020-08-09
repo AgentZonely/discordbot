@@ -2,7 +2,7 @@ const Discord = require("discord.js");
     const botsettings = require("../botsettings.json");
     const usedCommand = new Set();
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, arg) => {
 
     if (!message.member.permissions.has("MANAGE_MESSAGES")) // sets the permission
             return message.channel.send(

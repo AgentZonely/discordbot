@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
 const ms = require('ms');
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, arg) => {
     if(!args[0]) return message.channel.send("Hey nerd! specify a time!")
 
     if(!args[0].endsWith("d") &&!args[0].endsWith("h") &&!args[0].endsWith("m")) return message.channel.send("Hey there nerd! the correct time format is **days (d), hours (h), or minutes (m)!**")
