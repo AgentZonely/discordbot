@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, arg) => {
         { value: `Hosted by: **${message.author.mention}**` }
     )
     .setDescription("React to this message with 🎉 to enter")
-    .setColor("YELLOW")
+    .setColor("RANDOM")
     .setFooter("Ends at")
     .setTimestamp(Date.now() + ms(arg[1]))
    let m = await channel.send(embed);
