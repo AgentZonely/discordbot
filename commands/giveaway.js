@@ -17,6 +17,8 @@ module.exports.run = async (bot, message, arg) => {
     .setTitle("Sup Nerds (jk)")
     .setDescription(`**${message.author.username}** is giving away **${prize}**`)
     .setColor("YELLOW")
+    .setFooter("Made by Agent Cheese")
+    .setTimestamp(Date.now() + ms(args[1]))
    let m = await channel.send(embed);
    m.react("🎉")
     setTimeout(() => {
