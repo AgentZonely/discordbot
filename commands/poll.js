@@ -9,7 +9,6 @@ module.exports.run = async (bot, message, arg) => {
     if(!channel){
        return message.channel.send("Bruh, Mention a channel to create the poll in")
     }
-    let question = message.content.slice(bot.prefix.length+5+channel.id.length+3)
     let question = message.slice(1).join(" ")
     if(!question){
         return message.channel.send('Why do u wanna create a poll without asking a question lol')
@@ -25,7 +24,7 @@ module.exports.run = async (bot, message, arg) => {
 
 
 module.exports.config = {
-    name: "Poll",
+    name: "poll",
     description: "Creates a simple poll",
     usage: "?poll <channel id> <question>",
     aliases: []
