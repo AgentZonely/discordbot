@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle(`Sup nerds! ${message.author.id} wants to ask u a question!`)
     .setDescription(question)
     .setColor("YELLOW")
-    let message = await bot.channels.cache.get(channel.id).send(embed)
+    let msg = await bot.channels.cache.get(channel.id).send(embed)
      await msg.react('👍')
      await msg.react('👎')
 }
