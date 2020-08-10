@@ -41,9 +41,9 @@ bot.on('messageReactionAdd', async (reaction, user) => {
 });
 
 module.exports.config = {
-    name: "ticketsetup",
+    name: "newticket",
     description: "Create a new ticket",
-    usage: "?ticketsetup <channel>",
-    accessableby: "Mods, Admins",
+    usage: "?newticket",
+    accessableby: "Members",
     aliases: []
 }
