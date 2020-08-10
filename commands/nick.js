@@ -16,7 +16,7 @@ let embed2 = new Discord.MessageEmbed()
 .setTitle("Mention a user to nick!")
 if(!user) return message.channel.send(embed2)
 
-let name = arg.slice(1).join(" ")
+let name = arg.slice(2).join(" ")
 let embed3 = new Discord.MessageEmbed()
 .setTitle("Atleast give the name the user will be nicked to lol")
 .setColor("BLUE")
