@@ -28,7 +28,7 @@ let channel = message.mentions.channels.first();
         message.channel.send(embed)
     
 
-    if(message.content(`${bot.prefix}close`)) {
+    if(cmd === `${prefix}close`) {
         if(!message.channel.name.includes("ticket-")) return message.channel.send("You cannot use that here!")
         message.channel.delete();
     }
