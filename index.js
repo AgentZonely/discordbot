@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
 const botsettings = require('./botsettings.json');
+const enmap = require('enmap');
+
+const settings = new enmap({
+    name: "settings",
+    autoFetch: true,
+    cloneLevel: "deep",
+    fetchAll: true
+});
 
 const bot = new Discord.Client({disableEveryone: true});
 
