@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
+const bot = new Discord.Client({disableEveryone: true});
 
 module.exports.run = async (bot, message, arg) => {
 let channel = message.mentions.channels.first();
