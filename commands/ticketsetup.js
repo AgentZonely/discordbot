@@ -2,6 +2,12 @@ const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
 const bot = new Discord.Client({disableEveryone: true});
 const enmap = require('enmap');
+const settings = new enmap({
+    name: "settings",
+    autoFetch: true,
+    cloneLevel: "deep",
+    fetchAll: true
+});
 
 module.exports.run = async (bot, message, arg) => {
 let channel = message.mentions.channels.first();
