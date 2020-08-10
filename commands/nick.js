@@ -19,12 +19,14 @@ if(!user) return message.channel.send(embed2)
 let name = arg.slice(1).join(" ")
 let embed3 = new Discord.MessageEmbed()
 .setTitle("Atleast give the name the user will be nicked to lol")
+.setColor("BLUE")
 if(!name) return message.channel.send(embed3)
 
 user.setNickname(name)
 
 let embed4 = new Discord.MessageEmbed()
 .setTitle(`Successfully nicked **${user.user.tag}** to **${name}!**`)
+.setColor("GREEN")
 
 message.channel.send(embed4)
 
