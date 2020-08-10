@@ -10,29 +10,28 @@ const settings = new enmap({
 });
 
 module.exports.run = async (bot, message, arg) => {
-let channel = message.mentions.channels.first();
-        if(!channel) return message.reply("Mention a channel lol");
-
-        let sent = await channel.send(new Discord.MessageEmbed()
-            .setTitle("Ticket System")
-            .setDescription("React with 🎫 open a ticket!")
-            .setFooter("Ticket System")
-            .setColor("00ff00")
-        );
-
-        sent.react('🎫');
-        settings.set(`ticket-${message.guild.id}`, sent.id);
-
-        let embed = new Discord.MessageEmbed()
-        .setTitle(`Ticket created in **${channel}**`)
-        message.channel.send(embed)
-    
-
-    if(cmd === `${prefix}close`) {
-        if(!message.channel.name.includes("ticket-")) return message.channel.send("You cannot use that here!")
-        message.channel.delete();
+    const user = message.author.id;
+    const name = "ticket-" + user;
+    if(message.guild.channels.cache.find(ch => ch.name == name)){
+        message.channel.send("You have already opened a ticket!")
+    }else{
+message.guild.channels.create(name).then((chan)=>{
+chan.updateOverwrite(message.guild.roles.everyone, {
+    SEND_MESSAGES: false,
+    VIEW_CHANNEL: false
+})
+chan.updateOverwrite(user,{
+    SEND_MESSAGES: true,
+    VIEW_CHANNEL: true
+})
+message.channel.send("I have created a ticket for you");
+chan.send("Support will be here shortly").then((m)=>{
+    m.pin()
+})
+})   
+ }
     }
-};
+
 
 bot.on('messageReactionAdd', async (reaction, user) => {
     if(user.partial) await user.fetch();
