@@ -24,13 +24,12 @@ chan.updateOverwrite(user,{
     SEND_MESSAGES: true,
     VIEW_CHANNEL: true
 })
-message.channel.send("I have created a ticket for you");
-chan.send("Support will be here shortly").then((m)=>{
-    m.pin()
+message.channel.send("Successfully created a ticket!");
+chan.send(`<@&742502360592547990> will be with you shortly`)
 })
-})   
+}   
  }
-    }
+    
 
 
 bot.on('messageReactionAdd', async (reaction, user) => {
