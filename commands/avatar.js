@@ -4,7 +4,7 @@ const botsettings = require("../botsettings.json");
 
 module.exports.run = async (bot, message, arg) => {
 const user = message.mentions.users.first() || message.author;
-    const avatarEmbed = new discord.MessageEmbed()
+    const avatarEmbed = new Discord.MessageEmbed()
         .setColor("RANDOM")
         .setAuthor(user.tag)
         .setImage(user.displayAvatarURL({dynamic: true , size: 2048}))
