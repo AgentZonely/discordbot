@@ -25,7 +25,7 @@ chan.updateOverwrite(user,{
     VIEW_CHANNEL: true
 })
 message.channel.send("Successfully created a ticket!");
-chan.send(`<@&742502360592547990> will be with you shortly`)
+chan.send(`<@& " + 742502206019731457 +  will be with you shortly`)
 })
 }   
  }
