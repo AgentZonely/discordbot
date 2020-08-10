@@ -28,7 +28,7 @@ let channel = message.mentions.channels.first();
         message.channel.send(embed)
     
 
-    if(command == "close") {
+    if(cmd == "close") {
         if(!message.channel.name.includes("ticket-")) return message.channel.send("You cannot use that here!")
         message.channel.delete();
     }
