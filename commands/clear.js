@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, arg) => {
     }
 
 
-module.exports.help = {
+module.exports.config = {
     name: "clear",
     description: "clears messages",
     usage: "?clear",

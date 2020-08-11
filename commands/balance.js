@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, arg) => {
 
 }
 
-module.exports.help = {
+module.exports.config = {
     name: "balance",
     description: "",
     usage: "?bal/balance",
