@@ -10,8 +10,8 @@ module.exports.run = async (bot, message, arg) => {
         let user = message.mentions.users.first() || bot.users.cache.get(arg[0]);
     }
 
-    if(!money[user.id]){
-        money[user.id] = {
+    if(!money[`${user}`]){
+        money[`${user}`] = {
             name: bot.users.cache.get(`${user}`).tag,
             money: 0
         }
