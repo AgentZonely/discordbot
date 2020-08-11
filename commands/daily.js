@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, arg) => {
 
    let embedDaily = new Discord.MessageEmbed()
    .setTitle(`You have already collected your daily 1000 coins!, You can come back in **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
+   .setColor("RED")
    if (daily != null && timeout - (Date.now() - daily) > 0) {
        message.channel.send(embedDaily)
    } else {
