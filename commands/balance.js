@@ -1,32 +1,17 @@
 const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
-const fs = require("fs");
-const money = require("../money.json");
+const db = require("quick.db");
 
 module.exports.run = async (bot, message, arg) => {
+    let user = message.mentions.users.first() || message.author
+    let money = db.fetch(`money_${user.id}`)
 
-    if(!arg[0]) {
-        let user = message.author;
-    } else {
-        let user = message.mentions.users.first() || bot.users.cache.get(arg[0]);
-    }
+    let embedBal = new Discord.MessageEmbed()
+    .setTitle(`**${user}'s** balance`)
+    .setDescription(`Money: ${money}`)
+    if (money === null) money = 0
 
-    if(!money[user.id]) {
-        money[user.id] = {
-            name: bot.users.cache.get(user.id).tag,
-            money: 0
-        }
-        fs.writeFile("../money.json", JSON.stringify(money), (err) => {
-            if(err) console.log(err);
-        })
-    }
-
-    let a = new Discord.MessageEmbed()
-        .setTitle("User's Balance")
-        .setColor("RANDOM")
-        .setDescription(`**${bot.users.cache.get(user.id).username}** has **${money[user.id].money.toLocaleString()} bills**.`)
-        return message.channel.send(a);
-
+    message.channel.send(embedBal)
 }
 
 module.exports.config = {
