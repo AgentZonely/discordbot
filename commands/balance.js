@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, arg) => {
 
     if(!money[user.id]) {
         money[user.id] = {
-            name: bot.users.cache.get(user.id).tag,
+            name2: bot.users.cache.get(user.id).tag,
             money: 0
         }
         fs.writeFile("../money.json", JSON.stringify(money), (err) => {
