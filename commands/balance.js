@@ -10,9 +10,9 @@ module.exports.run = async (bot, message, arg) => {
         let user = message.mentions.users.first() || bot.users.cache.get(arg[0]);
     }
 
-    if(!money[`${user}`]){
-        money[`${user}`] = {
-            name: bot.users.cache.get(`${user}`).tag,
+    if(!money[user.id]){
+        money[user.id] = {
+            name: bot.users.cache.get(user.id).tag,
             money: 0
         }
         fs.writeFile("../money.json", JSON.stringify(money), (err) => {
@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, arg) => {
         });
     }
 
-    return message.channel.send(`${bot.users.cache.get(`${user}`).username} has ${money[`${user}`].money}`);
+    return message.channel.send(`${bot.users.cache.get(user.id).username} has ${money[user.id].money}`);
 }
 
 
