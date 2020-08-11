@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, arg) => {
     let embedBal = new Discord.MessageEmbed()
     .setTitle(`**${user}'s** balance`)
     .setDescription(`Money: ${money}`)
+    .setColor("RANDOM")
     if (money === null) money = 0
 
     message.channel.send(embedBal)
