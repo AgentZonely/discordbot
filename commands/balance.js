@@ -5,9 +5,9 @@ const money = require("../money.json");
 
 module.exports.run = async (bot, message, arg) => {
     if(!arg[0]){
-        var user = message.author;
+        let user = message.author;
     } else {
-        var user = message.mentions.users.first() || bot.users.cache.get(arg[0]);
+        let user = message.mentions.users.first() || bot.users.cache.get(arg[0]);
     }
 
     if(!money[user.id]){
