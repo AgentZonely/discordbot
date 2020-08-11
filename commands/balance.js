@@ -16,6 +16,6 @@ module.exports.config = {
     description: "",
     usage: "?bal/balance",
     accessableby: "Members",
-    aliases: ['bal']
+    aliases: ["bal"]
 }
 
