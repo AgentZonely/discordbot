@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
+const db = require("quick.db");
 
 
 module.exports.run = async (bot, message, arg) => {
