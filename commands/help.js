@@ -31,12 +31,12 @@ module.exports.run = async (bot,message,arg) => {
             
             command = bot.commands.get(command);
             var embed = new Discord.MessageEmbed()
-            .setAuthor(`${command.config.name} Command`)
+            .setAuthor(`${command.config.name} command`)
             .setDescription(`
-            - **Command's Description** __${command.config.description || "There is no Description for this command."}__
-            - **Command's Usage:** __${command.config.usage || "No Usage"}__
-            - **Command's Permissions:** __${command.config.accessableby || "Members"}__
-            - **Command's Aliases:** __${command.config.aliases || "No Aliases"}__
+             **Command's Description** ${command.config.description || "There is no Description for this command."}
+             **Command's Usage:** ${command.config.usage || "No Usage"}
+             **Command's Permissions:** ${command.config.accessableby || "Members"}
+             **Command's Aliases:** ${command.config.aliases || "No Aliases"}
             `)
             .setColor('#2EFF00')
 
