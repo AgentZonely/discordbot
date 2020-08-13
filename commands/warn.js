@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, arg) => {
         return message.channel.send("You can't warn the ownere OMEGALUL")
       }
       
-      const reason = arg.slice(1).join(" ")
+      const reason = arg.slice(2).join(" ")
       
       if(!reason) {
         return message.channel.send("Please provide reason to warn - warn <user> <reason>")
