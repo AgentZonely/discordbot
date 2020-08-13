@@ -48,10 +48,10 @@ module.exports.run = async (bot, message, arg) => {
         await message.channel.send(embedWarn)
       } else if(warnings !== null) {
           db.add(`warnings_${message.guild.id}_${user.id}`, 1)
-          let embedDm2 = new Discord.MessageEmbed()
+          let embeddm2 = new Discord.MessageEmbed()
         .setTitle(`You have been warned in **${message.guild.name}**`)
         .addField("Reason", reason)
-         user.send(embedDm2)
+         user.send(embeddm2)
         await message.channel.send(embedWarn)
       }
       
