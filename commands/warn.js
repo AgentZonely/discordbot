@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, arg) => {
       }
       
       if(user.id === message.guild.owner.id) {
-        return message.channel.send("You can't warn the ownere OMEGALUL")
+        return message.channel.send("You can't warn the owner OMEGALUL")
       }
       
       const reason = arg.slice(2).join(" ")
@@ -48,8 +48,8 @@ module.exports.run = async (bot, message, arg) => {
         await message.channel.send(embedWarn)
       } else if(warnings !== null) {
           db.add(`warnings_${message.guild.id}_${user.id}`, 1)
-         user.send(`You have been warned in **${message.guild.name}** for ${reason}`)
-        await message.channel.send(`You warned **${message.mentions.users.first().username}** for ${reason}`)
+         user.send(embedDm)
+        await message.channel.send(embedWarn)
       }
       
     
