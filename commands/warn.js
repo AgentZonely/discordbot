@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const ms = require("ms");
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8")); //We use this so that it knows what the database is. We'll be using a JSON database.
+let warns = JSON.parse(fs.readFileSync("../warnings.json", "utf8")); //We use this so that it knows what the database is. We'll be using a JSON database.
 
 module.exports.run = async (bot, message, arg) => {
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You are not allowed to run that command!"); //Checks to see if the user has permission to warn members.
