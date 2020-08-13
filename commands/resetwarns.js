@@ -29,7 +29,17 @@ if(!message.member.hasPermission("ADMINISTRATOR")) {
   }
   
   db.delete(`warnings_${message.guild.id}_${user.id}`)
-  user.send(`All warnings are reseted by ${message.author.username} from ${message.guild.name}`)
+
+  let rembedDm = new Discord.MessageEmbed()
+  .setTitle("Hi there!")
+  .setDescription(`All your warnings have been resetted by **${message.author.username}** from **${message.guild.name}**`)
+  .setColor("BLUE")
+  user.send(rembedDm)
+  let rembedGuild = new Discord.MessageEmbed()
+  .setTitle("Success")
+  .setDescription(`You have successfully resetted all the warnings of **${message.mentions.users.first().username}!**`)
+  .setColor("GREEN")
+  .setFooter(`Reset by **${message.author.username}**`)
   await message.channel.send(`Reseted all warnings of ${message.mentions.users.first().username}`)
   
 

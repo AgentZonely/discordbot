@@ -4,7 +4,7 @@ const ms = require("ms");
 const db = require("quick.db");
 
 module.exports.run = async (bot, message, arg) => {
-    const user = message.mentions.members.first() || message.author
+    const user = message.mentions.members.first().username || message.author.username
     
   
     let warnings = db.get(`warnings_${message.guild.id}_${user.id}`)
@@ -12,12 +12,13 @@ module.exports.run = async (bot, message, arg) => {
     
     if(warnings === null) warnings = 0;
 
-    let requested = message.author;
+    let requested = message.author.username;
     
     let warnEmbed = new Discord.MessageEmbed()
     .setTitle(`${user}'s warnings`)
     .addField("Warnings", warnings)
     .setFooter(`Requested by ${requested}`)
+    .setColor("RED")
     
     message.channel.send(warnEmbed)
   
