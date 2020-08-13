@@ -4,7 +4,7 @@ const ms = require("ms");
 const db = require("quick.db");
 
 module.exports.run = async (bot, message, arg) => {
-    const user = message.mentions.members.first().username || message.author.username
+    const user = message.mentions.members.first() || message.author.username
     
   
     let warnings = db.get(`warnings_${message.guild.id}_${user.id}`)
