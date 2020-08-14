@@ -16,7 +16,6 @@ module.exports.run = async (bot,message,arg) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here are all the available commands:`)
-            .setDescription('```hi | mute | unmute | kick | ban | meme | memberinfo | clear | giveaway | newticket | warn | rwarns | serverinfo | ```')
             .addField("**⪢Moderation**", 'Ban, Kick, Mute, Unmute, Warn, Rwarns, Addrole, Removerole, Giveaway, Poll')
             .addField("**⪢Fun**", 'Meme, Daily, Bal' )
             .addField("**⪢Info**", 'serverinfo, memberinfo')
