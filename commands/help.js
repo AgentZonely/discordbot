@@ -16,10 +16,11 @@ module.exports.run = async (bot,message,arg) => {
     if(!helpArgs[0]) {
         var embed = new Discord.MessageEmbed()
             .setAuthor(`Here are all the available commands:`)
-            .addField("**⪢Moderation**", 'Ban, Kick, Mute, Unmute, Warn, Rwarns, Addrole, Removerole, Giveaway, Poll')
-            .addField("**⪢Fun**", 'Meme, Daily, Bal' )
-            .addField("**⪢Info**", 'serverinfo, memberinfo')
-            .addFields({ name: 'Prefix', value: '```?```', inline: true})
+            .addField("**⪢ Moderation**", 'ban, kick, mute, unmute, warn, rwarns, addrole, removerole, giveaway, poll, nick, clear')
+            .addField("**⪢ Fun**", 'meme, daily, bal, avatar' )
+            .addField("**⪢ Info**", 'serverinfo, memberinfo, ping')
+            .addField("**⪢ Support**", 'newticket')
+            .addFields({ name: 'Prefix', value: '**?**', inline: true})
             .setColor('#00FFF3')
             
         message.channel.send(embed);
