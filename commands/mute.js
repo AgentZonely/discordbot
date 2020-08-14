@@ -20,5 +20,5 @@ module.exports.config = {
     description: "",
     usage: "?mute",
     accessableby: "Members",
-    aliases: []
+    aliases: ['']
 }

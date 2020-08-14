@@ -34,5 +34,5 @@ module.exports.config = {
     name: "level",
     description: "SHows the level and xp of a user",
     usage: "?level / ?level <user>",
-    aliases: []
+    aliases: ['']
 }

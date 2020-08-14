@@ -59,5 +59,5 @@ module.exports.config = {
     description: "Gives information about anime",
     usage: "?anime <anime name>",
     accessableby: "Members",
-    aliases: []
+    aliases: ['']
 }

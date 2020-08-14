@@ -22,5 +22,5 @@ module.exports.config = {
     description: "Adds a role to a specified member/bot",
     usage: "?addrole <user> <role>",
     accessableby: "Admins, Mods",
-    aliases: []
+    aliases: ['']
 }

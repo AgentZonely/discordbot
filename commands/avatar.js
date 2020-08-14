@@ -18,5 +18,5 @@ module.exports.config = {
     description: "Generates the avater for a user",
     usage: "?avatar or ?avatar <user>",
     accessableby: "Members",
-    aliases: []
+    aliases: ['']
 }

@@ -22,5 +22,5 @@ module.exports.config = {
     description: "Removes a role from a specified member/bot",
     usage: "?removerole <user> <role>",
     accessableby: "Admins, Mods",
-    aliases: []
+    aliases: ['rrole']
 }

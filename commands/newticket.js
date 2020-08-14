@@ -45,5 +45,5 @@ module.exports.config = {
     description: "Create a new ticket",
     usage: "?newticket",
     accessableby: "Members",
-    aliases: []
+    aliases: ['']
 }

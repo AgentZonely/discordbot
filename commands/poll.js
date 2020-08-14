@@ -27,5 +27,5 @@ module.exports.config = {
     name: "poll",
     description: "Creates a simple poll",
     usage: "?poll <channel id> <question>",
-    aliases: []
+    aliases: ['']
 }

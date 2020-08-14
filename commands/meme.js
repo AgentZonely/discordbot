@@ -20,5 +20,5 @@ module.exports.config = {
     description: "",
     usage: "?meme",
     accessableby: "Agents",
-    aliases: []
+    aliases: ['']
 }

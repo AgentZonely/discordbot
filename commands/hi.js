@@ -13,6 +13,6 @@ module.exports.config = {
     description: "",
     usage: "?hi",
     accessableby: "Agents",
-    aliases: []
+    aliases: ['']
 }
 

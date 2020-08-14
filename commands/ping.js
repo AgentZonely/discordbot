@@ -11,5 +11,5 @@ module.exports.config = {
     description: "Gives the ping",
     usage: "?ping",
     accessableby: "Everyone",
-    aliases: []
+    aliases: ['']
 }

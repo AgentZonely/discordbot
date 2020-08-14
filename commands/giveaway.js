@@ -43,6 +43,6 @@ module.exports.run = async (bot, message, arg) => {
         description: "",
         usage: "?giveaway",
         accessableby: "Agents",
-        aliases: []
+        aliases: ['']
     }
     

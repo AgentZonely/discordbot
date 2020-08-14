@@ -37,5 +37,5 @@ module.exports.config = {
     description: "Nicks a user",
     usage: "?nick <user> <name>",
     accessableby: "Admins, Mods",
-    aliases: []
+    aliases: ['']
 }

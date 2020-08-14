@@ -25,5 +25,5 @@ module.exports.config = {
     description: "Sets the status of the bot",
     usage: "?setstatus <status>",
     accessableby: "BOT OWNER ONLY",
-    aliases: []
+    aliases: ['']
 }

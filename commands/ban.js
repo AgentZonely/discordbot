@@ -46,5 +46,5 @@ module.exports.config = {
     description: "Bans a Users",
     usage: "?ban",
     accessableby: "Admins",
-    aliases: []
+    aliases: ['']
 }

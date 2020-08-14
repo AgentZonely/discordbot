@@ -35,6 +35,6 @@ module.exports.config = {
     description: "",
     usage: "?daily",
     accessableby: "Members",
-    aliases: []
+    aliases: ['']
 }
 
