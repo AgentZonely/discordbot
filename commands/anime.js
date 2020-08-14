@@ -6,13 +6,13 @@ const aq = require('animequote');
 
 
 module.exports.run = async (bot, message, arg) => {
-if(!args.length) {
+if(!arg.length) {
     return message.channel.send("Please Give Anime Name")
   }
   //DEFINE OPTIONS
   
   let option = {
-    url: `https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`,
+    url: `https://kitsu.io/api/edge/anime?filter[text]=${arg.join(" ")}`,
     method: `GET`,
     headers: {
       'Content-Type': "application/vnd.api+json",
