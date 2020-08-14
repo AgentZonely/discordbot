@@ -3,7 +3,7 @@ const botsettings = require("../botsettings.json");
 
 
 module.exports.run = async (bot, message, arg) => {
-message.channel.send(`Pong! - **${client.ws.ping}ms**`)
+message.channel.send(`Pong! - **${bot.ws.ping}ms**`)
 }
 
 module.exports.config = {

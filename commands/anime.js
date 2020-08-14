@@ -3,6 +3,7 @@ const botsettings = require("../botsettings.json");
 const Kitsu = require('kitsu');
 const kitsu = new Kitsu;
 const aq = require('animequote');
+const fetch = require('node-fetch');
 
 
 module.exports.run = async (bot, message, arg) => {
