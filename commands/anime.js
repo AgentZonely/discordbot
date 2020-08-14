@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const botsettings = require("../botsettings.json");
-const kitsu = require('kitsu');
+const Kitsu = require('kitsu');
 const kitsu = new Kitsu;
 const aq = require('animequote');
 
