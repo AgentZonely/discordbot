@@ -6,7 +6,7 @@ const db = require("quick.db");
 module.exports.run = async (bot, message, arg) => {
 const user = message.mentions.users.first() || message.author;
     
-    if(user.id === client.user.id) { //IF BOT
+    if(user.id === bot.user.id) { //IF BOT
       return message.channel.send("😉 | I am on level 100")
     }
     
