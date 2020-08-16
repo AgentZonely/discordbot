@@ -29,7 +29,7 @@ function match(msg, i) {
 
 module.exports.config = {
     name: "facepalm",
-    description: "Facepalms the user lol",
+    description: "Facepalms the user?",
     usage: "?facepalm <user>",
     accessableby: "Members",
     aliases: ['']
