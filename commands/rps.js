@@ -13,6 +13,7 @@ if (choices.includes((arg[1]))) {
         if ((arg[1]) == "rock") {
             return message.channel.send('I won OMEGALUL! (I chose paper).')
         }
+        if ((arg[1]) == "paper") {
             return message.channel.send('I won OMEGALUL! (I chose scissors).')
         }
         if ((arg[1]) == "scissors") {
