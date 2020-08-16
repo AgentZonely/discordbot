@@ -31,6 +31,6 @@ module.exports.config = {
     name: "facepalm",
     description: "Facepalms the user lol",
     usage: "?facepalm <user>",
-    accessableby: "Everyone",
+    accessableby: "Members",
     aliases: ['']
 }
