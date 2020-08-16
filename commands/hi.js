@@ -12,7 +12,7 @@ module.exports.config = {
     name: "hi",
     description: "",
     usage: "?hi",
-    accessableby: "Agents",
+    accessableby: "Everyone",
     aliases: ['']
 }
 
