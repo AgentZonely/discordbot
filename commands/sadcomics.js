@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
 
 module.exports.run = async (bot, message, arg) => {
-    const subReddits = ["meme", "me_irl", "dankmeme"]
+    const subReddits = ["sadcomics"]
     const random = subReddits[Math.floor(Math.random() * subReddits.length)];
     const img = await randomPuppy(random);
 
@@ -15,9 +15,9 @@ module.exports.run = async (bot, message, arg) => {
 }
 
 module.exports.config = {
-    name: "meme",
-    description: "",
-    usage: "?meme",
-    accessableby: "Agents",
+    name: "sadcomics",
+    description: "Gives u a sad comic",
+    usage: "?sadcomics",
+    accessableby: "Everyone ofc",
     aliases: ['']
 }
